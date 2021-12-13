@@ -1,0 +1,83 @@
+[
+        {
+            "animal_Id": 1,
+            "animalTipe": "Cat",
+            "animalName": "Puszek",
+            "animalSound": "MEOOOW...",
+            "animalPlace": "couch",
+            "animalAge": "22 to 30 years",
+            "animalFact": "A house cat’s genome is 95.6 percent tiger, and they share many behaviors with their jungle ancestors."
+         },
+        {
+            "animal_Id": 2,
+            "animalTipe": "Horse",
+            "animalName": "Rocket",
+            "animalSound": "Neigh",
+            "animalPlace": "stable",
+            "animalAge": "25-33years",
+            "animalFact": "Horses are “obligate nose breathers” meaning that they can only breathe through their nose, not through their mouth as humans can."
+         },
+        {
+            "animal_Id": 3,
+            "animalTipe": "Cow",
+            "animalName": "Penelope",
+            "animalSound": "Muuuuuu",
+            "animalPlace": "cowshed",
+            "animalAge": "around 20 years",
+            "animalFact": "Cows are good swimmers."
+         },
+        {
+            "animal_Id": 4,
+            "animalTipe": "Dog",
+            "animalName": "Rex",
+            "animalSound": "woof woof",
+            "animalPlace": "doghouse",
+            "animalAge": "13-16",
+            "animalFact": "Your dog could be left or right-pawed."
+         },
+        {
+            "animal_Id": 5,
+            "animalTipe": "Fish",
+            "animalName": "Jabberjaw",
+            "animalSound": "Baby shark tututututu..",
+            "animalPlace": "water",
+            "animalAge": "Greenland shark can live up to 400 years",
+            "animalFact": "Sharks do not have bones."
+         },
+        {
+            "animal_Id": 6,
+            "animalTipe": "Lion",
+            "animalName": "Leo",
+            "animalSound": "Roar",
+            "animalPlace": "Jungle",
+            "animalAge": "15 to 30 years",
+            "animalFact": "The name for lion in Swahili, an African language, is ‘simba’."
+         },
+        {
+            "animal_Id": 7,
+            "animalTipe": "Goat",
+            "animalName": "Billy",
+            "animalSound": "meeee",
+            "animalPlace": "Farm",
+            "animalAge": "between 15 and 18 years",
+            "animalFact": "Goats can be taught their name and to come when called."
+         },
+        {
+            "animal_Id": 8,
+            "animalTipe": "Goose",
+            "animalName": "Abigail",
+            "animalSound": "honk honk",
+            "animalPlace": "run for goose",
+            "animalAge": "10-15 years",
+            "animalFact": "Geese are related to Ducks and Swans."
+         },
+        {
+            "animal_Id": 9,
+            "animalTipe": "Pig",
+            "animalName": "Pepa",
+            "animalSound": "oink oink",
+            "animalPlace": "pigsty",
+            "animalAge": "15 to 20 years",
+            "animalFact": "When they are trained piglets can learn their names by two to three weeks of age and respond when called and can learn tricks faster than dogs."
+         }
+    ]

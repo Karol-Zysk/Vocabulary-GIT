@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet"> 
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+        <div class="header">
+            <div class="rainbow"></div>
+                <div class="header-txt header-box">V</div>
+                <div class="header-txt header-box">O</div>
+                <div class="header-txt header-box">C</div>
+                <div class="header-txt header-box">A</div>
+                <div class="header-txt header-box">B</div>
+                <div class="header-txt header-box">U</div>
+                <div class="header-txt header-box">L</div>
+                <div class="header-txt header-box">A</div>
+                <div class="header-txt header-box">R</div>
+                <div class="header-txt header-box">Y</div>
+        </div>
+        <div class="container">
+                <div class="mobile-sw-btn"><p class="p-btn"><i class="fas fa-angle-double-left"></i>&nbsp;&nbsp;SWITCH&nbsp;&nbsp;<i class="fas fa-angle-double-right"></i></p>
+                </div>
+                    <div class="sticky-navbar item">
+                            <div class="navbar nav-box-2">
+                                <div class="btnInside">
+                            </div>
+                                <a href="#" class="btn switch-btn">Chose</a>
+                            </div>
+                            <div class="navbar nav-box-3 ">
+                            <span>  CLICK to chose categories</span>
+                            </div>
+                    </div>
+                <div class="menu item" id="menu1">
+                </div>
+                    <div class="content item">
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                            <div class="cnt-bx cnt-img"></div>
+                    </div>
+                        <div class="footer item"><span class="footerSpan">Footer thoughts &nbsp; <i class="far fa-lightbulb"></i></span></div>
+                        <div class="popup" id="popup">
+                            <div class="popup-header">
+                            <div class="title">Chose category
+                        </div>
+                            </div>
+                            <div class="popup-body">
+                                <div class="pop-box1 pop"></div>
+                                <div class="pop-box2 pop"></div>
+                                <div class="pop-box3 pop"></div>
+                                <div class=" pop-txt">Animals</div>
+                                <div class=" pop-txt">Vehicles</div>
+                                <div class=" pop-txt">Fruits</div>
+                            </div>
+                        </div>
+                    <div id="overlay"></div>
+        </div>
+    <audio class="animalSound" src="./sounds/animals/1.mp3">
+    <audio class="animalSound" src="./sounds/animals/2.mp3">
+    <audio class="animalSound" src="./sounds/animals/3.mp3">
+    <audio class="animalSound" src="./sounds/animals/4.mp3">
+    <audio class="animalSound" src="./sounds/animals/5.mp3">
+    <audio class="animalSound" src="./sounds/animals/6.mp3">
+    <audio class="animalSound" src="./sounds/animals/7.mp3">
+    <audio class="animalSound" src="./sounds/animals/8.mp3">
+    <audio class="animalSound" src="./sounds/animals/9.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/1.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/2.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/3.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/4.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/5.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/6.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/7.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/8.mp3">
+    <audio class="vehicleSound" src="./sounds/vehicles/9.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/1.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/2.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/3.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/4.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/5.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/6.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/7.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/8.mp3">
+    <audio class="fruitSound" src="./sounds/fruits/9.mp3">
+
+    </audio>
+    <div class="mobile-sw-btn">SWITCH categories</div>
+    <script src="app.js"></script>
+
+</body>
+
+
+</html>
