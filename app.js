@@ -1,3 +1,4 @@
+// I look at this code several months after i wrote it, and i think im able to upgrade it but after some time i think that is better to write it again but better
 const container = document.querySelectorAll('.item')
 const contain = document.querySelector('.container')
 const navBox = document.getElementsByClassName('navbar')
@@ -24,36 +25,24 @@ const mobileButton = document.querySelector('.nav-box-3')
 const compButton = document.querySelector('.nav-box-2')
 const swBtn = document.querySelector('.mobile-sw-btn')
 
-
-
-console.log(headerTxt)
-if (compButton.style.display === "none") {
-} else {
-}
-
+//asignment ways to open popup on mobile and PC
 if (window.matchMedia("(max-width: 500px)").matches) {
-
   mobileButton.addEventListener('click', () => {
-  openpopup(popup)
+  openpopup()
   })
 } else {
-
   compButton.addEventListener('click', () => {
-
     openpopup(popup)
   })
 }
 
-
-
+//closing popup on clicking overlay
 overlay.addEventListener('click', () => {
   const popups = document.querySelectorAll('.popup.active')
   popups.forEach(popup => {
     closepopup(popup)
   })
 })
-
-
 
 function openpopup(popup) {
   if (popup == null) return
@@ -67,10 +56,8 @@ function closepopup(popup) {
   overlay.classList.remove('active')
 }
 
-
-
+//Animation navbar fix
 container.forEach((elem, index) => {
-
     elem.style.animationName = 'to-grey'
     elem.style.animationDuration = '0.5s'
     elem.style.animationIterationCount = '1'
@@ -78,12 +65,10 @@ container.forEach((elem, index) => {
     elem.style.animationDelay = `${(index/3) +0.3}s`
     elem.style.animationTimingFunction = 'linear'
     elem.style.animationFillMode = 'forwards'
-    // console.log(arrContainer+'to element')
 });
 
-
+// Header letters Animation
 headerBox.forEach((elem , index) => {
-    
     elem.style.animationName = 'Animals-animation'
     elem.style.animationDuration = '1s'
     elem.style.animationIterationCount = 'infinite'
@@ -97,7 +82,7 @@ let values = [3,0]
 
 
   animalsButton.addEventListener('click',  animalTimeOut )
- 
+
 
 function animalTimeOut() {
   footerSpan.innerText = "The expert in anything was once a begginer."
@@ -125,11 +110,8 @@ contentBox.forEach((elem, index)=>{
         elem.classList.remove('cnt-img')
         elem.classList.add(`animals-box${index+1}`)
         container.forEach(elem => {
-          // counter = counter + 0.5
           elem.style.animationName = 'to-transparent1'
           elem.style.animationDuration = '0.3s'
-          // elem.style.animationIterationCount = '1'
-          // elem.style.animationDirection = 'alternate'
           elem.style.animationDelay = '0s'
           elem.style.animationTimingFunction = 'linear'
           contain.style.backgroundImage = "url('./img/jungle.jpg')"
@@ -138,7 +120,6 @@ contentBox.forEach((elem, index)=>{
           menu1.innerHTML = ''
           document.querySelector('.nav-box-3').innerText = "Select an animal to hear it and display facts "
 
-          
         });
         
       elem.onclick = function  playSound(){
@@ -164,7 +145,6 @@ contentBox.forEach((elem, index)=>{
   <span class="vspan">Fun Fact:</span><br><hr size=3px color = white><p class="fact-paragraph"> ${animals[index].animalFact}</p>`
 })
 
-
       values.push(index)
       values.shift()
       let myValue = values[`${values.length-2}`]
@@ -172,8 +152,6 @@ contentBox.forEach((elem, index)=>{
       animalSound[myValue].pause();
       animalSound[myValue].currentTime = 0  
       animalSound[index].play()
-      console.log(values)
-      console.log(myValue)
         }
       }   
            }, 
@@ -254,8 +232,6 @@ contentBox.forEach((elem, index)=>{
         vehicleSound[myValue].pause();
         vehicleSound[myValue].currentTime = 0  
         vehicleSound[index].play()
-        console.log(values)
-        console.log(myValue)
           }
         } 
       },
@@ -283,7 +259,7 @@ contentBox.forEach((elem, index)=>{
         swBtn.style.display = "grid"
         swBtn.addEventListener('click', () => {
 
-          openpopup(popup)
+          openpopup()
         })
       }
       elem.style.animationName = 'opacity2'
@@ -340,8 +316,6 @@ contentBox.forEach((elem, index)=>{
           fruitSound[myValue].pause();
           fruitSound[myValue].currentTime = 0  
           fruitSound[index].play()
-          console.log(values)
-          console.log(myValue)
         }
       }
       },

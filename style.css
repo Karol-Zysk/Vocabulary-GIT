@@ -1,3 +1,6 @@
+/* in this project i meet @keyframes and @media for the first time and make more mistakes than good decisions soo i think comment all mistakes is useless
+ */
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -598,7 +601,7 @@ div.content > div {
 @keyframes to-grey{
     from {background: rgb(187, 187, 187);}
     to {
-         background-image: grey;}
+         background-image: rgb(223, 0, 0);}
     
     
 }
@@ -656,22 +659,6 @@ div.content > div {
     from {background: transparent;}
     to{background:rgba(243, 240, 240, 0.842);}
 } 
-@keyframes grid-change{
-    from {grid-column: 1 / -1;}
-    to{grid-column: 4 / -1;}
-} 
-
-@keyframes rotate{
-    from {transform:scale(120%);}
-    to{transform: scale(100%);}
-} 
-
-.rotate{
-    animation-name: rotate;
-    animation-duration: 400ms;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
 
 
 @media (max-width: 500px) {
@@ -1007,7 +994,6 @@ div.content > div {
     
     
     .fruits-box1{
-        transition: background-image 200ms ease-in-out 200ms;
         background-image: url("./img/a1.jpg");  
         background-size: cover;
         background-repeat: no-repeat;
