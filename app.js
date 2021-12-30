@@ -1,13 +1,10 @@
-// I look at this code several months after i wrote it, and i think im able to upgrade it but after some time i think that is better to write it again but better
+import { AnimalFetch } from "./modules/fetch_functions.js"
+import { VehicleFetch } from "./modules/fetch_functions.js";
+
 const container = document.querySelectorAll('.item')
 const contain = document.querySelector('.container')
-const navBox = document.getElementsByClassName('navbar')
 const headerBox = document.querySelectorAll('.header-box')
-const header = document.querySelectorAll('.header')
 const contentBox = document.querySelectorAll('.cnt-bx')
-const addClassBtn = document.getElementById('add-class-btn')
-const openpopupButtons = document.querySelector('.switch-btn')
-const closepopupButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 const animalsButton = document.querySelector('.pop-box1')
 const vehicleButton = document.querySelector('.pop-box2')
@@ -16,7 +13,6 @@ const animalSound = document.querySelectorAll('.animalSound')
 const vehicleSound = document.querySelectorAll('.vehicleSound')
 const fruitSound = document.querySelectorAll('.fruitSound')
 const menu1 = document.getElementById('menu1')
-const cntImg = document.querySelectorAll('.cnt-img')
 const footerSpan = document.querySelector('.footerSpan')
 const mobileButton = document.querySelector('.nav-box-3')
 const compButton = document.querySelector('.nav-box-2')
@@ -70,54 +66,46 @@ let values = [3,0]
 
   animalsButton.addEventListener('click',  animalTimeOut )
 
-  //Fetching info from Json Files to menu
-  function Fetch(index) {
-    
-    fetch('./animals.json')
-    .then(function  (response) {
-      return response.json();
-    })
-    .then(function (animals){
-      menu1.innerHTML =       `   <h2>${animals[index].animalTipe}</h2>
-      <hr size="5px" color="white">
-      <br>
-      <p class="paragraph"><span class="vspan">Name:</span> ${animals[index].animalName}</p>
-      <p class="paragraph"><span class="vspan">Max age</span>: ${animals[index].animalAge}</p>
-      <p class="paragraph"><span class="vspan">Place:</span> ${animals[index].animalPlace}</p>
-      <p class="paragraph"><span class="vspan">Sound:</span> ${animals[index].animalSound}</p><br>
-      <span class="vspan">Fun Fact:</span><br><hr size=3px color = white><p class="fact-paragraph"> ${animals[index].animalFact}</p>`
-    })
-  }
+ 
 
   //Styling Elements while changing categories
-function categoryChange(elem, index) {
-  
+
+  class CategoryChange {
+    constructor(names, index, elem, category, bgImage){
+    this.names = names;
+    this.index = index;
+    this.elem = elem;
+    this.category = category;
+    this.bgImage = bgImage;
+    }
+    categoryChange(){
+        
   mobileButton.style.pointerEvents ="none"
-  elem.style.animation = 'opacity 0.5s linear'
-  elem.classList.remove(`vehicle-box${index+1}`)
-  elem.classList.remove(`fruits-box${index+1}`)
-  elem.classList.remove('cnt-img')
-  elem.classList.add(`animals-box${index+1}`)
+  this.elem.style.animation = 'opacity 0.5s linear'
+  this.elem.classList.remove(`vehicle-box${this.index+1}`)
+  this.elem.classList.remove(`fruits-box${this.index+1}`)
+  this.elem.classList.remove(`animals-box${this.index+1}`)
+  this.elem.classList.remove('cnt-img')
+  this.elem.classList.add(`${this.names}${this.index+1}`)
   container.forEach(elem => {
       elem.style.animation = 'to-transparent1 0.3s linear forwards alternate'
-      contain.style.backgroundImage = "url('./img/jungle.jpg')"
+      contain.style.backgroundImage = `url('./img/${this.bgImage}.jpg')`
       menu1.style.display = "block"
       menu1.innerHTML = ''
-    document.querySelector('.nav-box-3').innerText = "Select an animal to hear it and display facts "
-
+    document.querySelector('.nav-box-3').innerText = `Select an ${this.category} to hear it and display facts `
   })
-}
+    }
+  }
 
 //Boxes conected to sounds
 
 function playSound(name, index) {
   values.push(index)
-  let name
   values.shift()
   let myValue = values[`${values.length-2}`]
-  `${name}Sound`[myValue].pause();
-  `${name}Sound`[myValue].currentTime = 0  
-  `${name}Sound`[index].play()
+  name[myValue].pause();
+  name[myValue].currentTime = 0  
+  name[index].play()
 }
 
 //Adding scroll function and new switch category button to mobile version
@@ -140,16 +128,20 @@ function animalTimeOut() {
   footerSpan.innerText = "The expert in anything was once a begginer."
   document.querySelector(".btn").innerText = "Switch"
 contentBox.forEach((elem, index)=>{
+
+  // Boxes Appearing one by one not all at one time
     setTimeout(() => {
         mobileScrolladdBtn(elem)
-        categoryChange(elem, index)
+        let animalCategory = new CategoryChange("animals-box", index, elem, "animal", "jungle")
+        animalCategory.categoryChange()
       }, 
       (index+1)*200);
+
       elem.onclick = function  soundAndInfo(){
         if (elem.classList.contains(`animals-box${index+1}`)) {
           menu1.style.animation = 'menu-change 0.3s forwards'
-          Fetch(index)
-          playSound(animal, index)
+          AnimalFetch(index)
+          playSound(animalSound, index)
         }
       }       
   })
@@ -189,7 +181,7 @@ contentBox.forEach((elem, index)=>{
           menu1.innerHTML = ''
           menu1.style.display = "block"
           document.querySelector('.nav-box-3').innerText = "Select a vehicle to hear it and display facts"
-
+          VehicleFetch(index)
           
         });
         elem.onclick = function  playSound(){
@@ -201,20 +193,7 @@ contentBox.forEach((elem, index)=>{
             menu1.style.animationIterationCount ='1'    
             
             
-            fetch('./vehicle.json')
-            .then(function  (response) {
-              return response.json();
-            })
-            .then(function (vehicle){
-              menu1.innerHTML =       `   <h2>${vehicle[index].vechicleName}</h2>
-              <hr size="5px" color="white">
-              <br>
-              
-              <p class="paragraph"><span class="vspan">Invention:</span>   ${vehicle[index].invention}</p>
-              <p class="paragraph"><span class="vspan">Max Speed:</span>   ${vehicle[index].maxSpeed}</p>
-              <br>
-             <span class="vspan">Fact:</span><br><hr size="3px" color="white"><p class="fact-paragraph">  ${vehicle[index].vehicleFact}</p>`
-            })
+
   
         values.push(index)
         values.shift()
