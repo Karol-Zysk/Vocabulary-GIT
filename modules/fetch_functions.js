@@ -34,3 +34,21 @@
     })
   }
   
+
+  export function FruitsFetch(index){
+    fetch('./fruits.json')
+    .then(function  (response) {
+      return response.json();
+    })
+    .then(function (fruits){
+      menu1.innerHTML =       `   <h2>${fruits[index].fruitName}</h2><br>
+      <hr size="5px" color="white">
+      <br>
+      
+      <p class="paragraph"><span class="vspan">Color:</span>   ${fruits[index].color}</p>
+      <p class="paragraph"><span class="vspan">Year of domestication:</span>   ${fruits[index].Since}</p>
+      <br>
+      <span class="vspan">Fact:</span><br><hr size = 3px color= white> <p class="fact-paragraph"> ${fruits[index].fruitFact}</p>`
+     
+    })
+  }

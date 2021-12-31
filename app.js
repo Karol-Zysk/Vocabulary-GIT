@@ -1,5 +1,6 @@
 import { AnimalFetch } from "./modules/fetch_functions.js"
 import { VehicleFetch } from "./modules/fetch_functions.js";
+import { FruitsFetch } from "./modules/fetch_functions.js";
 
 const container = document.querySelectorAll('.item')
 const contain = document.querySelector('.container')
@@ -57,16 +58,13 @@ container.forEach((elem, index) => {
 
 // Header letters Animation
 headerBox.forEach((elem , index) => {
-    elem.style.animationName = 'Animals-animation ease-in 1s alternate infinite'
+    elem.style.animation = 'Animals-animation ease-in 1s alternate infinite'
     elem.style.animationDelay = `${(index/10)+0.1}s`
 });
 
 let values = [3,0]
 
-
   animalsButton.addEventListener('click',  animalTimeOut )
-
- 
 
   //Styling Elements while changing categories
 
@@ -82,6 +80,7 @@ let values = [3,0]
         
   mobileButton.style.pointerEvents ="none"
   this.elem.style.animation = 'opacity 0.5s linear'
+  //Removing styles and add style of clicked category
   this.elem.classList.remove(`vehicle-box${this.index+1}`)
   this.elem.classList.remove(`fruits-box${this.index+1}`)
   this.elem.classList.remove(`animals-box${this.index+1}`)
@@ -122,10 +121,15 @@ function mobileScrolladdBtn(elem) {
   }
 }
  
+//Footer Texts
+const TextA = "The expert in anything was once a begginer."
+const TextB = "Never stop learning, becouse life never stops teaching."
+const TextC = "Learning how to learn is life's most important skill."
+
 
 
 function animalTimeOut() {
-  footerSpan.innerText = "The expert in anything was once a begginer."
+  footerSpan.innerText = `${TextA}`
   document.querySelector(".btn").innerText = "Switch"
 contentBox.forEach((elem, index)=>{
 
@@ -150,139 +154,56 @@ overlay.classList.remove('active')
 }
 
 
-
 vehicleButton.addEventListener('click',  vehicleTimeOut )
-function vehicleTimeOut() {
-footerSpan.innerText = "Never stop learning, becouse life never stops teaching."
-document.querySelector(".btn").innerText = "Switch"
-contentBox.forEach((elem, index)=>{
-    setTimeout(() => {
-      if (window.matchMedia("(max-width: 500px)").matches) {
-        elem.addEventListener('click', () => window.scrollTo({
-          top: 455,
-          behavior: 'smooth',
-        }));
-        swBtn.style.display = "grid"
-        swBtn.addEventListener('click', () => {
+  function vehicleTimeOut() {
+    footerSpan.innerText = `${TextB}`
+    document.querySelector(".btn").innerText = "Switch"
+      contentBox.forEach((elem, index)=>{
 
-          openpopup(popup)
-        })
-      }
-      elem.style.animationName = 'opacity1'
-      elem.style.animationDuration = '0.5s'
-      elem.style.animationTimingFunction = 'linear'
-        elem.classList.remove(`animals-box${index+1}`)
-        elem.classList.remove(`fruits-box${index+1}`)
-        elem.classList.remove('cnt-img')
-        elem.classList.add(`vehicle-box${index+1}`)
-        container.forEach(elem => {
-          elem.style.animationName = 'to-transparent2  0.3s linear forwards alternate'
-          contain.style.backgroundImage = "url('./img/road.jpg')"
-          menu1.innerHTML = ''
-          menu1.style.display = "block"
-          document.querySelector('.nav-box-3').innerText = "Select a vehicle to hear it and display facts"
-          VehicleFetch(index)
-          
-        });
-        elem.onclick = function  playSound(){
-          if (elem.classList.contains(`vehicle-box${index+1}`)) {
-            menu1.style.animationName = 'menu-change1'
-            menu1.style.animationDuration = '0.5s'
-            menu1.style.animationTimingFunction = 'linear'
-            menu1.style.animationFillMode = 'forwards'
-            menu1.style.animationIterationCount ='1'    
-            
-            
-
-  
-        values.push(index)
-        values.shift()
-        let myValue = values[`${values.length-2}`]
-        vehicleSound[myValue].pause();
-        vehicleSound[myValue].currentTime = 0  
-        vehicleSound[index].play()
-          }
-        } 
-      },
+// Boxes Appearing one by one not all at one time
+          setTimeout(() => {
+      mobileScrolladdBtn(elem)
+      let vehicleCategory = new CategoryChange("vehicle-box", index, elem, "vehicle", "road")
+      vehicleCategory.categoryChange()
+    }, 
     (index+1)*200);
-  })
-  popup.classList.remove('active')
-  overlay.classList.remove('active') 
 
+    elem.onclick = function  soundAndInfo(){
+      if (elem.classList.contains(`vehicle-box${index+1}`)) {
+        menu1.style.animation = 'menu-change1 0.3s forwards'
+        VehicleFetch(index)
+        playSound(vehicleSound, index)
+      }
+    }       
+})
+popup.classList.remove('active')
+overlay.classList.remove('active')
 }
 
-
-fruitsButton.addEventListener('click',  fruitsTimeOut )
-function fruitsTimeOut() {
-  footerSpan.innerText = "Learning how to learn is life's most important skill."
-
-  
-document.querySelector(".btn").innerText = "Switch"
-contentBox.forEach((elem, index)=>{
-    setTimeout(() => {
-      if (window.matchMedia("(max-width: 500px)").matches) {
-        elem.addEventListener('click', () => window.scrollTo({
-          top: 455,
-          behavior: 'smooth',
-        }));
-        swBtn.style.display = "grid"
-        swBtn.addEventListener('click', () => {
-
-          openpopup()
-        })
-      }
-      elem.style.animationName = 'opacity2'
-      elem.style.animationDuration = '0.5s'
-      elem.style.animationTimingFunction = 'linear'
-        elem.classList.remove(`animals-box${index+1}`)
-       elem.classList.remove(`vehicle-box${index+1}`)
-       elem.classList.remove('cnt-img')
-        elem.classList.add(`fruits-box${index+1}`)
-        container.forEach(elem => {
-          elem.style.animationName = 'to-transparent3 0.3s linear forwards alternate'
-          contain.style.backgroundImage = "url('./img/fruits1.jpg')"
-          menu1.innerHTML = ''
-          menu1.style.display = "block"
-          document.querySelector('.nav-box-3').innerHTML = "Chose Fruit to display facts"
-
-        });
-        
-        elem.onclick = function  playSound(){
-        if (elem.classList.contains(`fruits-box${index+1}`)) {
-          menu1.style.animationName = 'menu-change2'
-          menu1.style.animationDuration = '0.5s'
-          menu1.style.animationFillMode = 'forwards'
-          menu1.style.animationIterationCount ='1'   
-          
-          fetch('./fruits.json')
-          .then(function  (response) {
-            return response.json();
-          })
-          .then(function (fruits){
-            menu1.innerHTML =       `   <h2>${fruits[index].fruitName}</h2><br>
-            <hr size="5px" color="white">
-            <br>
+  fruitsButton.addEventListener('click',  fruitsTimeOut )
+  function fruitsTimeOut() {
+    footerSpan.innerText = `${TextC}`
+    document.querySelector(".btn").innerText = "Switch"
+    contentBox.forEach((elem, index)=>{
+    
+      // Boxes Appearing one by one not all at one time
+        setTimeout(() => {
+            mobileScrolladdBtn(elem)
+            let fruitCategory = new CategoryChange("fruits-box", index, elem, "fruit", "fruits1")
+            fruitCategory.categoryChange()
+          }, 
+          (index+1)*200);
             
-            <p class="paragraph"><span class="vspan">Color:</span>   ${fruits[index].color}</p>
-            <p class="paragraph"><span class="vspan">Year of domestication:</span>   ${fruits[index].Since}</p>
-            <br>
-            <span class="vspan">Fact:</span><br><hr size = 3px color= white> <p class="fact-paragraph"> ${fruits[index].fruitFact}</p>`
-           
-          })
-
-            
-          values.push(index)
-          values.shift()
-          let myValue = values[`${values.length-2}`]
-          fruitSound[myValue].pause();
-          fruitSound[myValue].currentTime = 0  
-          fruitSound[index].play()
-        }
-      }
-      },
-    (index+1)*200);
-  })
+          elem.onclick = function  soundAndInfo(){
+            if (elem.classList.contains(`fruits-box${index+1}`)) {
+              menu1.style.animation = 'menu-change2 0.3s forwards'
+              FruitsFetch(index)
+              playSound(fruitSound, index)
+            }
+          }       
+      })
+      popup.classList.remove('active')
+    overlay.classList.remove('active')
+  }
   
-  popup.classList.remove('active')
-  overlay.classList.remove('active')
-}
+
