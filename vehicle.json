@@ -1,0 +1,65 @@
+[
+    {
+        "vehicle_Id": 1,
+        "vechicleName": "Tram",
+        "invention": 1875,
+        "maxSpeed": "115km/h North American LRT",
+        "vehicleFact": "The world's first experimental electric tramway was built by Ukrainian inventor Fedir Pirotsky near St Petersburg, Russian Empire"
+     },
+    {
+        "vehicle_Id": 2,
+        "vechicleName": "Car",
+        "invention": 1886,
+        "maxSpeed": "532km/h SSC Tuatara",
+        "vehicleFact": "There is an estimated 1.4 billion cars on the road, putting the vehicle saturation at around 18 per cent."
+     },
+    {
+        "vehicle_Id": 3,
+        "vechicleName": "Motorcycle",
+        "invention": "Daimler Reitwagen 1885",
+        "maxSpeed": "2000 MTT Y2K Superbike - 402km/h",
+        "vehicleFact": "Daimler moved onto bigger projects after the creation of the Daimler Reitwagen model, never returning to motorcycle construction again. He ended up producing and constructing engines and power units, and then he began designing and building early automobiles. His Reitwagen was his sole motorcycle project. "
+     },
+    {
+        "vehicle_Id": 4,
+        "vechicleName": "Train",
+        "invention":  "21 February 1804",
+        "maxSpeed": "L0 Series Maglev - 602km/h ",
+        "vehicleFact": "The term “horsepower” originated as a marketing tool."
+     },
+    {
+        "vehicle_Id": 5,
+        "vechicleName": "Airplane",
+        "invention": "Wright brothers in 1903",
+        "maxSpeed": "The Lockheed SR-71 Blackbird 3500km/h",
+        "vehicleFact": "The An-225 is the heaviest aircraft ever built, with a maximum takeoff weight of 710 tons. It holds the record for total airlifted payload at 253 tons.  It has the longest wingspan of any plane currently flying at 88m, and six freakin' engines."
+     },
+    {
+        "vehicle_Id": 6,
+        "vechicleName": "Ship / Boat",
+        "invention": "The earliest historical evidence is found in Egypt - 4th millennium bc",
+        "maxSpeed": "Spirit of Australia 510km/h",
+        "vehicleFact": "Titanic was 269 metres long, 28 metres wide and more than 53 meters tall. Knock Nevis was 458 metres in length and 69 m in width, making her the largest ship in the world."
+     },
+    {
+        "vehicle_Id": 7,
+        "vechicleName": "Helicopter",
+        "invention": 1923,
+        "maxSpeed": "Sikorsky X2 – 481 km/h",
+        "vehicleFact": "The Mi-26, popularly known as Halo, is the world’s largest helicopter in production, and has a cargo area 12m long and 3.3m wide, which can accommodate two combat vehicles weighing up to 9,988kg."
+     },
+    {
+        "vehicle_Id": 8,
+        "vechicleName": "Train",
+        "invention": "Karl Benz engineered the first motorized bus in 1895.",
+        "maxSpeed": "Superbus 250km/h",
+        "vehicleFact": "The longest operational bus route in the world today is between Lima, Peru and Rio de Janeiro, Brazil. it is 2,600 km long and takes over 100 hours to complete."
+     },
+    {
+        "vehicle_Id": 9,
+        "vechicleName": "Biycle",
+        "invention": "Karl von Drais 1817",
+        "maxSpeed": "Denise Mueller Korenek 296 km/h",
+        "vehicleFact": "There are over 1 billion bicycles currently being used all around the world. Cycling as a popular pastime and competitive sport was established during late 19th century in England. Bicycles save over 238 million gallons of gas every year."
+     } 
+]

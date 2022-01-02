@@ -1,0 +1,65 @@
+[
+    {
+        "fruit_Id": 1,
+        "fruitName": "Banana",
+        "color": "yellow",
+        "Since": 1880,
+        "fruitFact": "The banana is actually classified as a berry."
+     },
+    {
+        "fruit_Id": 2,
+        "fruitName": "Apple",
+        "color": "green, red, yellow",
+        "Since": "4000–10000 years ago in the Tian Shan",
+        "fruitFact": "Apples make up half of the world's deciduous fruit tree production"
+     },
+    {
+        "fruit_Id": 3,
+        "fruitName": "Orange",
+        "color": "orange",
+        "Since": "at least 3,300 years ago",
+        "fruitFact": " Sweet oranges have a distinct origin from the bitter orange, which arose independently, perhaps in the wild, from a cross between pure mandarin and pomelo parents."
+     },
+    {
+        "fruit_Id": 4,
+        "fruitName": "Grape",
+        "color": "green, red, purple",
+        "Since": "8,000 -5,000 years ago",
+        "fruitFact": "29,292 square miles are devoted to grape growing"
+     },
+    {
+        "fruit_Id": 5,
+        "fruitName": "Kiwi",
+        "color": "brown",
+        "Since": 1904,
+        "fruitFact": "Nutrition-wise, kiwi fruits contain about as much potassium as bananas and a high amount of Vitamin C, more than oranges"
+     },
+    {
+        "fruit_Id": 6,
+        "fruitName": "Pear",
+        "color": "yellow, green, red",
+        "Since": "Pears were cultivated in China as early as 2000 BC",
+        "fruitFact": "Pears are a part of the rose family."
+     },
+    {
+        "fruit_Id": 7,
+        "fruitName": "Cherry",
+        "color": "red",
+        "Since": "Bronze Age 3300 BC to 1200 BC",
+        "fruitFact": "The average cherry tree has 7,000 cherries."
+     },
+    {
+        "fruit_Id": 8,
+        "fruitName": "Raspberry",
+        "color": "red",
+        "Since": "XV century",
+        "fruitFact": "According to legend, raspberries were originally white. The nymph Ida pricked her finger while picking berries for the crying infant Jupiter, and raspberries have since been tinged red with her blood."
+     },
+    {
+        "fruit_Id": 9,
+        "fruitName": "Strawberry",
+        "color": "red",
+        "Since": "France 1750s",
+        "fruitFact": "Despite their name, strawberries aren't technically berries—they're accessory fruits. "
+     }
+]
