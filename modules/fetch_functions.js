@@ -1,4 +1,4 @@
- //Fetching info from Json Files to menu
+ //Fetching menu info from Json Files to menu 
  export function AnimalFetch(index) {
     
     fetch('./animals.json')
